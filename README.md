@@ -15,7 +15,7 @@ Etape 5 :
 
 Etape 13 :
 1.  Avec quelle partie du code avons-nous paramétré l'url d'appel /greeting ?
-Cette partie est paramétrée dans le controller HelloWorldController.java dans la méthode greeting().
+Cette partie est paramétrée dans le controller HelloWorldController.java dans la méthode greeting() qui est annotée @RequestMapping avec la valeur "/greeting". Cette méthode est appelée lorsque l'url /greeting est detectée.
 
 2. Avec quelle partie du code avons-nous choisi le fichier HTML à afficher ?
 Le nom du template correspond au retour de la méthode greeting() dans le controller HelloWorldController.java.

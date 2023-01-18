@@ -34,4 +34,4 @@ Etape 23 :
 L'annotation @Autowired est utilisée pour l'injection de dépendance par type. L'injection de dépendance par type signifie que Spring recherche le bean qui correspond au type de la dépendance et l'injecte.
 
 Etape 30 :
-Pour importer Bootstrap dans le projet, dans la balise head du fichier index.html, j'ai ajouté la référence au CDN de Bootstrap.
+Pour importer Bootstrap dans le projet, dans la balise head du fichier head.html, j'ai ajouté la référence au CDN de Bootstrap.

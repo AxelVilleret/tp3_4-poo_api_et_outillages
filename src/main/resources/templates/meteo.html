@@ -5,10 +5,9 @@
 
 <body>
     <div th:insert="~{fragments/navbar :: navbar}"></div>
-    <h1>Les differentes adresses</h1>
-    <ul th:each="address:${allAddresses}">
-        <li th:text="${address.author} + ' - ' + ${address.content}" />
-    </ul>
+    <p th:text="${address}" />
+    <p th:text="${cityCode}" />
+    <p th:text="'Les coordonnées sont : ' + ${coordonnees[0]} + ' et ' + ${coordonnees[1]}" />
 </body>
 
 </html>

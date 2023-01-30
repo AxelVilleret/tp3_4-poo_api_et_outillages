@@ -1,5 +1,7 @@
 TP réalisé dans le cadre du cours "POO api et outillages" de ma formation d'ingénieur. Il s'agit d'une mini application web permettant d'obtenir des prévisions météorologiques à partir d'une adresse saisie par l'utilisateur via des API. Elle repose sur le framework Spring Boot.
 
+Lien GitHub : https://github.com/AxelVilleret/tp3_4-poo_api_et_outillages
+
 # Partie 1 :
 
 Etape 5 :

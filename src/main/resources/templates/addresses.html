@@ -1,14 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:insert="~{fragments/head :: head}"></head>
+<head th:replace="fragments/head :: head('Adresses')"></head>
 
 <body>
     <div th:insert="~{fragments/navbar :: navbar}"></div>
-    <h1>Les differentes adresses</h1>
-    <ul th:each="address:${allAddresses}">
-        <li th:text="${address.author} + ' - ' + ${address.content}" />
-    </ul>
+    <h1>Available adresses</h1> <br>
+    <div class="card" th:each="address:${allAddresses}" >
+        <h5 class="card-header"></h5>
+        <div class="card-body">
+            <h5 class="card-title" th:text="${address.content}"></h5>
+            <p class="card-text" th:text="'Created by ' + ${address.author} + ' the ' + ${address.creation}"></p>
+            <form action="/meteo" method="post">
+                <input type="hidden" name="address" th:value="${address.content}">
+                <input type="submit" value="Get weather !" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>

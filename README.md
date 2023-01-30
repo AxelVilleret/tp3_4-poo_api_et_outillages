@@ -1,4 +1,6 @@
-TP réalisé dans le cadre du cours "POO api et outillages" de ma formation d'ingénieur. Il s'agit du 3ème TP ayant pour but du créer une application Spring Boot reposant sur les technologies suivantes :
+TP réalisé dans le cadre du cours "POO api et outillages" de ma formation d'ingénieur. Il s'agit d'une mini application web permettant d'obtenir des prévisions météorologiques à partir d'une adresse saisie par l'utilisateur via des API. Elle repose sur le framework Spring Boot.
+
+# Partie 1 :
 
 Etape 5 :
 - Spring Web est un ensemble de modules de Spring qui fournit des fonctionnalités pour développer des applications web avec Spring. Il inclut des fonctionnalités pour la gestion des requêtes HTTP, la gestion des vues, la gestion de la sécurité, la gestion des formulaires, la gestion des redirections et des forwards, entre autres. Il utilise également des composants tels que Spring MVC pour fournir un cadre pour la création d'applications web basées sur des modèles.
@@ -35,3 +37,28 @@ L'annotation @Autowired est utilisée pour l'injection de dépendance par type. 
 
 Etape 30 :
 Pour importer Bootstrap dans le projet, dans la balise head du fichier head.html, j'ai ajouté la référence au CDN de Bootstrap.
+
+# Partie 2 :
+
+Etape 6 :
+
+• Faut-il une clé API pour appeler MeteoConcept ? 
+Oui on utilise le Token d'authentification pour appeler l'API qui nous est fournie par MeteoConcept.
+
+• Quelle URL appeler ?
+https://api.meteo-concept.com/api/forecast/daily?latlng=[lat]%2C[long]&insee=[codeinsee]
+Ou le contenu des crochets est remplacé par les valeurs des paramètres.
+
+• Quelle méthode HTTP utiliser ? 
+GET
+
+• Comment passer les paramètres d'appels ? 
+Les paramètres sont passés dans l'url de l'appel comme vu précédemment.
+
+• Où est l'information dont j'ai besoin dans la réponse : 
+
+• Pour afficher la température du lieu visé par les coordonnées GPS 
+forecast[i]->tmin et forecast[i]->tmax avec i = 0 pour aujourd'hui et i = 1 pour demain, etc.
+
+• Pour afficher la prévision de météo du lieu visé par les coordonnées GPS 
+forecast[i]->weather avec i = 0 pour aujourd'hui et i = 1 pour demain, etc.

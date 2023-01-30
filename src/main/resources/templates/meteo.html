@@ -1,13 +1,34 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:insert="~{fragments/head :: head}"></head>
+<head th:replace="fragments/head :: head('Forecast')"></head>
 
 <body>
     <div th:insert="~{fragments/navbar :: navbar}"></div>
-    <p th:text="${address}" />
-    <p th:text="${cityCode}" />
-    <p th:text="'Les coordonnées sont : ' + ${coordonnees[0]} + ' et ' + ${coordonnees[1]}" />
+    <h1 th:text="'Your forecast for the 14 next days (' + ${cityName} + ')'" /> <br>
+
+    <table class="table table-light table-striped">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Day N°</th>
+                <th scope="col">Date</th>
+                <th scope="col">Tmin (°C)</th>
+                <th scope="col">Tmax (°C)</th>
+                <th scope="col">Weather (°C)</th>
+                <th scope="col">Sun Hours</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            <tr th:each="day : ${forecast}">
+                <td th:text="${day.day}"></td>
+                <td th:text="${day.datetime.substring(0, 10)}"></td>
+                <td th:text="${day.tmin}"></td>
+                <td th:text="${day.tmax}"></td>
+                <td th:text="${day.weather}"></td>
+                <td th:text="${day.sun_hours}"></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 
 </html>
